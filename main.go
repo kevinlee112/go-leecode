@@ -23,7 +23,6 @@ func main()  {
 	//str := "abbcccddddeeeeedcba"
 	//pow := easy.MaxPower(str)
 	//fmt.Println(pow)
-	nums:= []int{1,2,3,4}
-	ret := easy.Shuffle(nums, 2)
-	fmt.Println(ret)
+	a := "SENESSEENWNNWNNENNNNNEESSWN"
+	fmt.Println(easy.IsPathCrossing(a))
 }
