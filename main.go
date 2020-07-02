@@ -23,6 +23,6 @@ func main()  {
 	//str := "abbcccddddeeeeedcba"
 	//pow := easy.MaxPower(str)
 	//fmt.Println(pow)
-	a := "SENESSEENWNNWNNENNNNNEESSWN"
-	fmt.Println(easy.IsPathCrossing(a))
+	n := 13
+	fmt.Println(easy.CountLargestGroup(n))
 }
