@@ -7,7 +7,7 @@ import (
 
 func main()  {
 
-
-	fmt.Println(easy.MaxNumberOfBalloons("balon"))
+	a := "aaaaaaaa"
+	fmt.Println(easy.RemoveDuplicates(a))
 
 }
