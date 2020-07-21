@@ -12,8 +12,10 @@ func commonChars(A []string) []string {
 			wordMap[char]++
 		}
 		for char, firstWordMapCharCount := range firstWordMap {
-			count, _ := wordMap[char]
-			if firstWordMapCharCount > count {
+			count, ok := wordMap[char]
+			if !ok {
+				delete(firstWordMap, char)
+			}else if firstWordMapCharCount > count {
 				firstWordMap[char] = count
 			}
 		}
