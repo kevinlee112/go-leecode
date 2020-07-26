@@ -10,7 +10,6 @@ func addToArrayForm(A []int, K int) []int {
 		var res []int
 		res=append(res,K%10)
 		res=append(res,A...)
-		//    A=append(A,K%10,A...)  语法错误，不能A...不能与其他的一起
 		A=res
 	}
 	return A
