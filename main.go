@@ -1,13 +1,9 @@
 package main
+const cl  = 100
 
-import (
-	"fmt"
-	"summery/leecode/easy"
-)
+var bl    = 123
 
 func main()  {
-
-	a := []int{3,-1,0,2}
-	fmt.Println(easy.LargestSumAfterKNegations(a, 2))
-
+	println(&bl,bl)
+	println(cl)
 }
