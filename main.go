@@ -1,9 +1,15 @@
 package main
-const cl  = 100
 
-var bl    = 123
+import (
+	"fmt"
+	"summery/leecode/middle"
+)
 
-func main()  {
-	println(&bl,bl)
-	println(cl)
+func main() {
+	nums := "ab20ba"
+	res := middle.MyAtoi(nums)
+	fmt.Println(res)
 }
+
+
+
