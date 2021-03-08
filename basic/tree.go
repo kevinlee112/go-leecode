@@ -40,7 +40,6 @@ func PostOrderTraversal(tree *TreeNode) {
 }
 
 // 按层遍历
-
 func LevelOrderTraversal(tree *TreeNode) {
 	if tree == nil {
 		return

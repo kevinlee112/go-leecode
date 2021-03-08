@@ -1,21 +1,36 @@
 package middle
 
-func Permute(nums []int) [][]int {
-	if len(nums) == 1 {
-		return [][]int{nums}
-	}
-	var res [][]int
-	for i, num := range nums {
-		// 把num从 nums 拿出去 得到tmp
-		tmp := make([]int, len(nums)-1)
-		copy(tmp[0:], nums[0:i])
-		copy(tmp[i:], nums[i+1:])
+import "fmt"
 
-		// sub 是把num 拿出去后，数组中剩余数据的全排列
-		sub := Permute(tmp)
-		for _, s := range sub {
-			res = append(res, append(s, num))
+var result [][]int
+
+// 回溯核心
+// nums: 原始列表
+// pathNums: 路径上的数字
+// used: 是否访问过
+func backtrack(nums, pathNums []int, used[]bool) {
+	if len(nums) == len(pathNums) {
+		result = append(result, pathNums)
+		fmt.Println(result)
+		return
+	}
+
+	for i:=0; i<len(nums); i++ {
+		// 检查是否访问过
+		if !used[i] {
+			used[i] = true
+			pathNums = append(pathNums, nums[i])
+			backtrack(nums,pathNums,used)
+			pathNums = pathNums[:len(pathNums) -1]
+			used[i] = false
 		}
 	}
-	return res
+}
+
+func Permute(nums []int) [][]int {
+	var pathNums []int
+	var used = make([]bool, len(nums))
+	result = [][]int{}
+	backtrack(nums, pathNums, used)
+	return result
 }

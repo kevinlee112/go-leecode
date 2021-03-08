@@ -1,12 +1,13 @@
 package easy
 
 func removeElement(nums []int, val int) int {
-	for i := 0; i < len(nums);{
-		if nums[i] == val {
-			nums = append(nums[:i],nums[i+1:]...)
-		}else{
-			i++
+	n := 0
+	for i := 0; i < len(nums);i++{
+		if nums[i] != val {
+			nums[n] = nums[i]
+			n++
 		}
 	}
-	return len(nums)
+	nums = nums[0:n+1]
+	return n+1
 }

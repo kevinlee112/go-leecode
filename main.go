@@ -2,13 +2,14 @@ package main
 
 import (
 	"fmt"
-	"summery/leecode/middle"
+	"summery/leecode/1-100"
 )
 
-func main() {
-	nums := "ab20ba"
-	res := middle.MyAtoi(nums)
-	fmt.Println(res)
+
+func main()  {
+	arr := []int{0, 0, 0, 0}
+	taget:= 0
+	fmt.Println(__100.FourSum(arr, taget))
 }
 
 
