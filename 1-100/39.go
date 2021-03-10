@@ -9,19 +9,20 @@ func combinationSum(candidates []int, target int) [][]int {
 
 func dfs(candidates []int, target int) [][]int {
 	ret := [][]int{}
-	for i, d := range candidates{
-		if target - d < 0 {
+	for i, d := range candidates {
+		if d > target {
 			break
-		}else if target -d == 0 {
+		} else if d == target {
 			ret = append(ret, []int{d})
-			continue
-		}
-		for _, v := range dfs(candidates[i:], target-d){
-			ret = append(ret, append([]int{d}, v...))
+		}else {
+			for _, v := range dfs(candidates[i:], target-d){
+				ret = append(ret, append([]int{d}, v...))
+			}
 		}
 	}
 	return ret
 }
+
 
 
 

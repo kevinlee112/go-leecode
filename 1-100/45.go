@@ -22,14 +22,14 @@ dp[n] = dp[n-1] + 1
 
 func jump(nums []int) int {
 	n := len(nums)
-	f := make([]int, n)
-	f[0] = 0
-	for i := 1;i<n;i++ {
+	m := make([]int, n)
+	m[0] = 0
+	for i:=1;i<n;i++{
 		idx := 0
-		for idx + nums[idx]<i {
+		for idx + m[idx] < i {
 			idx++
 		}
-		f[i] = f[idx] + 1
+		m[i] = m[idx]+1
 	}
-	return f[n -1]
+	return m[n-1]
 }

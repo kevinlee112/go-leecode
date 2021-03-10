@@ -28,13 +28,13 @@ package __100
  */
 
 func removeElement(nums []int, val int) int {
-	n := 0
-	for i := 0; i < len(nums);i++{
-		if nums[i] != val {
-			nums[n] = nums[i]
-			n++
+	i, j := 0, 0
+	for j < len(nums) {
+		if nums[j] != val {
+			nums[i] = nums[j]
+			i++
 		}
+		j++
 	}
-	nums = nums[0:n]
-	return n
+	return i
 }

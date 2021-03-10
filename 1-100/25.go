@@ -11,10 +11,10 @@ k 是一个正整数，它的值小于或等于链表的长度。
 
 func reverseKGroup(head *ListNode, k int) *ListNode {
 	cur := head
-	for i:=1;i<k&& cur != nil; i++ {
+	for i:=0;i<k&&cur!=nil;i++ {
 		cur = cur.Next
 	}
-	if cur == nil {
+	if cur==nil {
 		return head
 	}
 	next := cur.Next

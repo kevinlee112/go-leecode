@@ -23,15 +23,21 @@ package __100
 你不需要考虑数组中超出新长度后面的元素。
  */
 func removeDuplicates(nums []int) int {
-	if len(nums) <=1  {
+	if len(nums) <= 1 {
 		return len(nums)
 	}
-	n := 0
-	for i:=1;i<len(nums);i++ {
-		if nums[i] != nums[n] {
-			n++
-			nums[n] = nums[i]
+	i, j := 0, 1
+	for j < len(nums) {
+		if nums[i] != nums[j] {
+			i++
+			nums[i] = nums[j]
 		}
+		j++
 	}
-	return n+1
+	return i+1
 }
+
+
+
+
+
